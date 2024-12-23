@@ -16,6 +16,6 @@ public class RecipeManager
 
     public Recipe GetRecipe(int index)
     {
-        return recipes[index];
+        return recipes[index - 1];
     }
 }
