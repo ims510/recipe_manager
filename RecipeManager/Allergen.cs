@@ -1,5 +1,5 @@
 namespace RecipeManager;
-
+[Flags]
 public enum Allergen
 {
     DairyFree = 1 << 0,

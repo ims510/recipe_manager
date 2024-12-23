@@ -1,3 +1,4 @@
+using System.Text;
 namespace RecipeManager;
 
 public class Recipe
@@ -36,8 +37,47 @@ public class Recipe
         Tags = dto.Tags;
         Title = dto.Title;
         Url = dto.Url;
-        Notes = dto.Notes;
+        if (dto.Notes is null)
+        {
+            Notes = [];
+        }
+        else
+        {
+        Notes = new List<string>(dto.Notes);
+        }
         Categories = (RecipeCategory) Enum.Parse(typeof(RecipeCategory), dto.Categories);
         Allergens = (Allergen) Enum.Parse(typeof(Allergen), dto.Allergens);
+    }
+
+    public string GetText()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine($"Title: {Title}");
+        sb.AppendLine($"Source: {Source}");
+        sb.AppendLine($"Language: {Language}");
+        sb.AppendLine($"Categories: {Categories}");
+        sb.AppendLine($"Allergens: {Allergens}");
+        sb.AppendLine("Ingredients:");
+        foreach (string ingredient in Ingredients)
+        {
+            sb.AppendLine($"- {ingredient}");
+        }
+        sb.AppendLine("Directions:");
+        foreach (string direction in Directions)
+        {
+            sb.AppendLine($"- {direction}");
+        }
+        sb.AppendLine("Tags:");
+        foreach (string tag in Tags)
+        {
+            sb.AppendLine($"- {tag}");
+        }
+        sb.AppendLine("Notes:");
+        
+        foreach (string note in Notes)
+        {
+            sb.AppendLine($"- {note}");
+        }
+        return sb.ToString();
     }
 }

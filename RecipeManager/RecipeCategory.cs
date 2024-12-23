@@ -1,5 +1,6 @@
 namespace RecipeManager;
 
+[Flags]
 public enum RecipeCategory
 {
     Dessert = 1 << 0,
