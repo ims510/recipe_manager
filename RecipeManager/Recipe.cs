@@ -13,8 +13,9 @@ public class Recipe
     public List<string> Notes { get; private set; }
     public RecipeCategory Categories { get; private set; }
     public Allergen Allergens { get; private set; }
+    public string Filename { get; private set; }
 
-    public Recipe(string title, string url, string language, string source, string[] ingredients, string[] directions, string[] tags, RecipeCategory categories, Allergen allergens)
+    public Recipe(string title, string url, string language, string source, string[] ingredients, string[] directions, string[] tags, RecipeCategory categories, Allergen allergens, string filename)
     {
         Directions = directions;
         Ingredients = ingredients;
@@ -26,9 +27,10 @@ public class Recipe
         Notes = [];
         Categories = categories;
         Allergens = allergens;
+        Filename = filename;
     }
 
-    public Recipe(RecipeDto dto)
+    public Recipe(RecipeDto dto, string filename)
     {
         Directions = dto.Directions;
         Ingredients = dto.Ingredients;
@@ -43,10 +45,30 @@ public class Recipe
         }
         else
         {
-        Notes = new List<string>(dto.Notes);
+            Notes = new List<string>(dto.Notes);
         }
         Categories = (RecipeCategory) Enum.Parse(typeof(RecipeCategory), dto.Categories);
         Allergens = (Allergen) Enum.Parse(typeof(Allergen), dto.Allergens);
+        Filename = filename;
+    }
+
+    public RecipeDto ToDto()
+    {
+        RecipeDto dto = new RecipeDto()
+        {
+            Directions = Directions,
+            Ingredients = Ingredients,
+            Language = Language,
+            Source = Source,
+            Tags = Tags,
+            Title = Title,
+            Url = Url,
+            Notes = Notes.ToArray(),
+            Categories = Categories.ToString(),
+            Allergens = Allergens.ToString(),
+        };
+
+        return dto;
     }
 
     public string GetText()

@@ -33,10 +33,10 @@ public class CommandInterpreter
                     return new AddNoteCommand(recipeManager, commandArguments);
                 case "clear-notes":
                     return new ClearNotesCommand(recipeManager, commandArguments);
+                case "save-recipe":
+                    return new SaveRecipeCommand(recipeManager, commandArguments);
                 default:
                     throw new CommandNotFoundException(commandName);
-                    
-
             }
         }
 }

@@ -69,7 +69,7 @@ public class LoadRecipesCommand : Command
         {
             string json = File.ReadAllText(filename);
             RecipeDto recipeDto = JsonSerializer.Deserialize<RecipeDto>(json, options);
-            return new Recipe(recipeDto);
+            return new Recipe(recipeDto, filename);
         }
         catch (Exception e)
         {
