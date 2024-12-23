@@ -31,7 +31,7 @@
         "Barbecuing"
     ],
     "title": "Baby Back Ribs",
-    "categories": ["Dinner", "Lunch"],
-    "allergens": ["DairyFree", "GlutenFree", "NutFree", "SoyFree"],
+    "categories": "Dinner, Lunch",
+    "allergens": "DairyFree, GlutenFree, NutFree, SoyFree",
     "url": "http://www.foodnetwork.com/recipes/dave-lieberman/baby-back-ribs-recipe"
 }

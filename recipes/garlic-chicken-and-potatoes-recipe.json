@@ -27,8 +27,8 @@
         "Low-Fat",
         "Gluten Free"
     ],
-    "categories": ["Healthy", "Dinner"],
-    "allergens": ["DairyFree", "GlutenFree", "NutFree", "SoyFree"],
+    "categories": "Healthy, Dinner",
+    "allergens": "DairyFree, GlutenFree, NutFree, SoyFree",
     "title": "Garlic Chicken and Potatoes",
     "url": "http://www.foodnetwork.com/recipes/food-network-kitchen/garlic-chicken-and-potatoes-recipe"
 }

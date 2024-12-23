@@ -33,8 +33,8 @@
         "Tree Nut Free",
         "Soy Free"
     ],
-    "categories": [ "Dinner"],
-    "allergens": ["NutFree", "SoyFree"],
+    "categories": "Dinner",
+    "allergens": "NutFree, SoyFree",
     "title": "Indian Lamb Chops wih Curried Cauliflower",
     "url": "http://www.epicurious.com/recipes/food/views/indian-lamb-chops-wih-curried-cauliflower-356730"
 }

@@ -24,7 +24,7 @@ public class CommandInterpreter
             switch (commandName)
             {
                 case "load-recipes":
-                    return new LoadRecipes(recipeManager, commandArguments);
+                    return new LoadRecipesCommand(recipeManager, commandArguments);
                 default:
                     throw new CommandNotFoundException(commandName);
                     

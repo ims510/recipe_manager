@@ -43,8 +43,8 @@
         "Peanut Free",
         "Kosher"
     ],
-    "categories": ["Dessert", "Healthy"],
-    "allergens": ["DairyFree", "GlutenFree", "NutFree"],
+    "categories": "Dessert, Healthy",
+    "allergens": "DairyFree, GlutenFree, NutFree",
     "title": "Dairy-Free Lemon Cr\u00e8mes With Oat-Thyme Crumble",
     "url": "http://www.epicurious.com/recipes/food/views/dairy-free-lemon-cremes-with-oat-thyme-crumble-51238460"
 }

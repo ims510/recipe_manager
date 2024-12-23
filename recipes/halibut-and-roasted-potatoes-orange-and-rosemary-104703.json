@@ -24,8 +24,8 @@
         "Orange",
         "Rosemary"
     ],
-    "categories": ["Dinner", "Lunch"],
-    "allergens": ["DairyFree", "GlutenFree", "NutFree", "SoyFree"],
+    "categories": "Dinner, Lunch",
+    "allergens": "DairyFree, GlutenFree, NutFree, SoyFree",
     "title": "Halibut and Roasted Potatoes, Orange, and Rosemary",
     "url": "http://www.epicurious.com/recipes/food/views/halibut-and-roasted-potatoes-orange-and-rosemary-104703"
 }

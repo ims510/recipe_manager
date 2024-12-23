@@ -32,7 +32,7 @@
         "Soy Free"
     ],
     "title": "Cabbage-Caraway Quiche",
-    "categories": ["Dinner", "Lunch"],
-    "allergens": ["NutFree", "SoyFree"],
+    "categories": "Dinner, Lunch",
+    "allergens": "NutFree, SoyFree",
     "url": "http://www.epicurious.com/recipes/food/views/cabbage-caraway-quiche-2884"
 }

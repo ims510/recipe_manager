@@ -26,8 +26,8 @@
         "Summer",
         "Lemon Juice"
     ],
-    "categories": ["Dessert"],
-    "allergens": ["NutFree", "SoyFree"],
+    "categories": "Dessert",
+    "allergens": "NutFree, SoyFree",
     "title": "Faux Tart with Instant Lemon Ginger Custard",
     "url": "http://www.epicurious.com/recipes/food/views/faux-tart-with-instant-lemon-ginger-custard-51185230"
 }

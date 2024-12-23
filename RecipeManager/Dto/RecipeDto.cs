@@ -10,6 +10,6 @@ public class RecipeDto
     public string Title { get; set; }
     public string Url { get; set; }
     public List<string> Notes { get; set; }
-    public string[] Categories { get; set; }
-    public string[] Allergens { get; set; }
+    public string Categories { get; set; }
+    public string Allergens { get; set; }
 }

@@ -38,8 +38,8 @@
         "Tree Nut Free",
         "Soy Free"
     ],
-    "categories": ["Brunch", "Dessert"],
-    "allergens": ["NutFree", "SoyFree"],
+    "categories":"Brunch, Dessert",
+    "allergens": "NutFree, SoyFree",
     "title": "Easiest Noodle Kugel",
     "url": "http://www.epicurious.com/recipes/food/views/easiest-noodle-kugel-100318"
 }

@@ -23,8 +23,8 @@
     "language": "en-US",
     "source": "allrecipes.com",
     "tags": [],
-    "categories": ["Snack"],
-    "allergens": ["DairyFree", "GlutenFree", "NutFree", "SoyFree"],
+    "categories": "Snack",
+    "allergens": "DairyFree, GlutenFree, NutFree, SoyFree",
     "title": "Addictive Asian Beef Slaw (Crack Slaw)",
     "url": "http://allrecipes.com/recipe/247300/addictive-asian-beef-slaw-crack-slaw/"
 }
