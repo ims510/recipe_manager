@@ -29,6 +29,10 @@ public class CommandInterpreter
                     return new ShowRecipeCommand(recipeManager, commandArguments);
                 case "save-as-md":
                     return new SaveAsMDCommand(recipeManager, commandArguments);
+                case "add-note":
+                    return new AddNoteCommand(recipeManager, commandArguments);
+                case "clear-notes":
+                    return new ClearNotesCommand(recipeManager, commandArguments);
                 default:
                     throw new CommandNotFoundException(commandName);
                     

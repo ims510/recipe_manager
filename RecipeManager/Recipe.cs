@@ -113,4 +113,14 @@ public class Recipe
         }
         return sb.ToString();
     }
+
+    public void AddNote(string note)
+    {
+        Notes.Add(note);
+    }
+
+    public void ClearNotes()
+    {
+        Notes.Clear();
+    }
 }
