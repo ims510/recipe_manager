@@ -27,6 +27,8 @@ public class CommandInterpreter
                     return new LoadRecipesCommand(recipeManager, commandArguments);
                 case "show-recipe":
                     return new ShowRecipeCommand(recipeManager, commandArguments);
+                case "save-as-md":
+                    return new SaveAsMDCommand(recipeManager, commandArguments);
                 default:
                     throw new CommandNotFoundException(commandName);
                     

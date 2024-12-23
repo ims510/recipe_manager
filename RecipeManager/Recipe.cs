@@ -54,6 +54,7 @@ public class Recipe
         StringBuilder sb = new StringBuilder();
         sb.AppendLine($"Title: {Title}");
         sb.AppendLine($"Source: {Source}");
+        sb.AppendLine($"Url: {Url}");
         sb.AppendLine($"Language: {Language}");
         sb.AppendLine($"Categories: {Categories}");
         sb.AppendLine($"Allergens: {Allergens}");
@@ -74,6 +75,38 @@ public class Recipe
         }
         sb.AppendLine("Notes:");
         
+        foreach (string note in Notes)
+        {
+            sb.AppendLine($"- {note}");
+        }
+        return sb.ToString();
+    }
+
+    public string GetMarkdown()
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.AppendLine($"# {Title}");
+        sb.AppendLine($"[{Url}]({Url})  ");
+        sb.AppendLine($"**Source:** {Source}  ");
+        sb.AppendLine($"**Language:** {Language}  ");
+        sb.AppendLine($"**Categories:** {Categories}  ");
+        sb.AppendLine($"**Allergens:** {Allergens}  ");
+        sb.AppendLine("## Ingredients");
+        foreach (string ingredient in Ingredients)
+        {
+            sb.AppendLine($"- {ingredient}");
+        }
+        sb.AppendLine("## Directions");
+        foreach (string direction in Directions)
+        {
+            sb.AppendLine($"1. {direction}");
+        }
+        sb.AppendLine("## Tags");
+        foreach (string tag in Tags)
+        {
+            sb.AppendLine($"- {tag}");
+        }
+        sb.AppendLine("## Notes");
         foreach (string note in Notes)
         {
             sb.AppendLine($"- {note}");
