@@ -20,7 +20,7 @@ public class ShowRecipeCommand : Command
         }
         
         int id = int.Parse(arguments[0]);
-        if (id > 0 && id <= recipeManager.GetRecipeCount())
+        if (id > 0 && id <= recipeManager.RecipeCount)
         {
             Recipe recipe = recipeManager.GetRecipe(id);
             Console.WriteLine(recipe.GetText());

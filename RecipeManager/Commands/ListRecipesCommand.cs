@@ -9,10 +9,10 @@ public class ListRecipesCommand : Command
 
     public override void Execute()
     {
-        for (int i = 1; i <= recipeManager.GetRecipeCount(); i++)
+        for (int i = 1; i <= recipeManager.RecipeCount; i++)
         {
             Recipe recipe = recipeManager.GetRecipe(i);
-            Console.WriteLine($"{i}. {recipe.Title}");
+            Console.WriteLine($"{recipe.Id}. {recipe.Title}");
         }
     }
 }

@@ -14,8 +14,9 @@ public class Recipe
     public RecipeCategory Categories { get; private set; }
     public Allergen Allergens { get; private set; }
     public string Filename { get; private set; }
+    public int Id { get; private set; }
 
-    public Recipe(string title, string url, string language, string source, string[] ingredients, string[] directions, string[] tags, RecipeCategory categories, Allergen allergens, string filename)
+    public Recipe(string title, string url, string language, string source, string[] ingredients, string[] directions, string[] tags, RecipeCategory categories, Allergen allergens, string filename, int id)
     {
         Directions = directions;
         Ingredients = ingredients;
@@ -28,9 +29,10 @@ public class Recipe
         Categories = categories;
         Allergens = allergens;
         Filename = filename;
+        Id = id;
     }
 
-    public Recipe(RecipeDto dto, string filename)
+    public Recipe(RecipeDto dto, string filename, int id)
     {
         Directions = dto.Directions;
         Ingredients = dto.Ingredients;
@@ -50,6 +52,7 @@ public class Recipe
         Categories = (RecipeCategory) Enum.Parse(typeof(RecipeCategory), dto.Categories);
         Allergens = (Allergen) Enum.Parse(typeof(Allergen), dto.Allergens);
         Filename = filename;
+        Id = id;
     }
 
     public RecipeDto ToDto()

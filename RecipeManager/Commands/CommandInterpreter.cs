@@ -37,6 +37,8 @@ public class CommandInterpreter
                     return new SaveRecipeCommand(recipeManager, commandArguments);
                 case "list-recipes":
                     return new ListRecipesCommand(recipeManager, commandArguments);
+                case "search":
+                    return new SearchCommand(recipeManager, commandArguments);
                 default:
                     throw new CommandNotFoundException(commandName);
             }

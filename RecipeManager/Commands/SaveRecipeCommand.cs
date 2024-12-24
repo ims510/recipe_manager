@@ -24,7 +24,7 @@ public class SaveRecipeCommand : Command
         }
 
         int id = int.Parse(arguments[0]);
-        if (id > 0 && id <= recipeManager.GetRecipeCount())
+        if (id > 0 && id <= recipeManager.RecipeCount)
         {
             Recipe recipe = recipeManager.GetRecipe(id);
             RecipeDto recipeDto = recipe.ToDto();

@@ -43,7 +43,7 @@ public class LoadRecipesCommand : Command
             try
             {
                 string jsonpath = $"{directory}/{line}";
-                Recipe recipe = ParseJsonRecipe(jsonpath);
+                Recipe recipe = ParseJsonRecipe(jsonpath, recipeManager.RecipeCount + 1);
                 recipeManager.AddRecipe(recipe);
                 count++;
             }
@@ -56,7 +56,7 @@ public class LoadRecipesCommand : Command
 
     }
 
-    private Recipe ParseJsonRecipe(string filename)
+    private Recipe ParseJsonRecipe(string filename, int id)
     {
         JsonSerializerOptions options = new JsonSerializerOptions
         {
@@ -69,7 +69,7 @@ public class LoadRecipesCommand : Command
         {
             string json = File.ReadAllText(filename);
             RecipeDto recipeDto = JsonSerializer.Deserialize<RecipeDto>(json, options);
-            return new Recipe(recipeDto, filename);
+            return new Recipe(recipeDto, filename, id);
         }
         catch (Exception e)
         {
