@@ -31,7 +31,7 @@ public class SaveAsMDCommand : Command
             }
             catch (Exception e)
             {
-                Console.Error.WriteLine($"Error saving recipe: {e.Message}");
+                recipeManager.LocalisationService.PrintMessage("error-saving-recipe", e.Message);
             }
         }
         else

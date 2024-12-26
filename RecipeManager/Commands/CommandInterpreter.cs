@@ -28,6 +28,8 @@ public class CommandInterpreter
                 return new ShowRecipeCommand(recipeManager, commandArguments);
             case "save-as-md":
                 return new SaveAsMDCommand(recipeManager, commandArguments);
+            case "save-as-html":
+                return new SaveAsHtmlCommand(recipeManager, commandArguments);
             case "add-note":
                 return new AddNoteCommand(recipeManager, commandArguments);
             case "clear-notes":
@@ -42,6 +44,7 @@ public class CommandInterpreter
                 return new ChangeLanguageCommand(recipeManager, commandArguments);
             case "help":
                 return new HelpCommand(recipeManager, commandArguments);
+    
             default:
                 throw new CommandNotFoundException(commandName, recipeManager.LocalisationService);
         }
