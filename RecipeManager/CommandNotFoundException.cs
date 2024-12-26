@@ -11,4 +11,9 @@ public class CommandNotFoundException : Exception
         : base($"Invalid command: {message}")
     {
     }
+
+    public CommandNotFoundException(string message, LocalisationService localisationService)
+        : base($"{localisationService.GetMessage("invalid-command")}: {message}")
+    {
+    }
 }

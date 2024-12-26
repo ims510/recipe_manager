@@ -6,6 +6,13 @@ public class RecipeManager
 
     public int RecipeCount => recipes.Count;
 
+    public LocalisationService LocalisationService { get; private set; }
+
+    public RecipeManager(LocalisationService localisationService)
+    {
+        LocalisationService = localisationService;
+    }
+
     public void AddRecipe(Recipe recipe)
     {
         recipes.Add(recipe);

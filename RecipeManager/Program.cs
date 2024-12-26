@@ -4,7 +4,8 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        RecipeManager recipeManager = new RecipeManager();
+        LocalisationService localisationService = new LocalisationService();
+        RecipeManager recipeManager = new RecipeManager(localisationService);
         CommandInterpreter interpreter = new CommandInterpreter(recipeManager);
 
         while (true)

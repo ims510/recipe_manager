@@ -17,7 +17,7 @@ public class LoadRecipesCommand : Command
     {
         if (!isValid)
         {
-            Console.WriteLine("Invalid command arguments");
+            recipeManager.LocalisationService.PrintMessage("invalid-command-arguments");
             return;
         }
 
@@ -52,7 +52,7 @@ public class LoadRecipesCommand : Command
                 Console.Error.WriteLine($"Error loading recipe: {e.Message}");
             }
         }
-        Console.WriteLine($"Loaded {count} recipes");
+        recipeManager.LocalisationService.PrintMessage("loaded-recipes", count);
 
     }
 
@@ -73,7 +73,7 @@ public class LoadRecipesCommand : Command
         }
         catch (Exception e)
         {
-            Console.Error.WriteLine($"Error parsing JSON: {e.Message}");
+            recipeManager.LocalisationService.PrintMessage("error-parsing-json", e.Message);
             throw;
         }
     }

@@ -15,14 +15,15 @@ public class SearchCommand : Command
     {
         if (!isValid)
         {
-            Console.WriteLine("Invalid command arguments");
+            recipeManager.LocalisationService.PrintMessage("invalid-command-arguments");
             return;
         }
 
         string searchType = arguments[0];
+        string searchTypeTag = recipeManager.LocalisationService.GetCommand(searchType);
         string searchTerm = arguments[1];
         Recipe[] searchResults;
-        switch (searchType)
+        switch (searchTypeTag)
         {
             case "title":
                 searchResults = recipeManager.SearchByTitle(searchTerm);
@@ -37,7 +38,7 @@ public class SearchCommand : Command
                 RecipeCategory category;
                 if (!Enum.TryParse(searchTerm, true, out category))
                 {
-                    Console.WriteLine($"Invalid category: {searchTerm}");
+                    recipeManager.LocalisationService.PrintMessage("invalid-category", searchTerm);
                     return;
                 }
                 searchResults = recipeManager.SearchByCategory(category);
@@ -46,22 +47,22 @@ public class SearchCommand : Command
                 Allergen allergen;
                 if (!Enum.TryParse(searchTerm, true, out allergen))
                 {
-                    Console.WriteLine($"Invalid allergen: {searchTerm}");
+                    recipeManager.LocalisationService.PrintMessage("invalid-allergen", searchTerm);
                     return;
                 }
                 searchResults = recipeManager.SearchByAllergen(allergen);
                 break;
             default:
-                Console.WriteLine($"Invalid search type: {searchType}");
+                recipeManager.LocalisationService.PrintMessage("invalid-search-type", searchType);
                 return;
         }
         if (searchResults.Length == 0)
         {
-            Console.WriteLine("No recipes found");
+            recipeManager.LocalisationService.PrintMessage("no-recipes-found");
         }
         else
         {
-            Console.WriteLine($"Found {searchResults.Length} recipes:");
+            recipeManager.LocalisationService.PrintMessage("found-recipes", searchResults.Length);
             foreach (Recipe recipe in searchResults)
             {
                 Console.WriteLine($"{recipe.Id}: {recipe.Title}");

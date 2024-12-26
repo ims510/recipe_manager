@@ -12,16 +12,15 @@ public class CommandInterpreter
         {
             if (arguments.Length < 1)
             {
-                Console.Error.WriteLine("Not enough arguments!");
-
-                // new NopCommand();
+                return new NoCommand(recipeManager);
             }
 
             string commandName = arguments[0];
-            //commandName = localizationService.GetText(commandName);
+            string commandTag = recipeManager.LocalisationService.GetCommand(commandName);
+            
             string[] commandArguments = arguments.Skip(1).ToArray();
 
-            switch (commandName)
+            switch (commandTag)
             {
                 case "load-recipes":
                     return new LoadRecipesCommand(recipeManager, commandArguments);
@@ -39,8 +38,10 @@ public class CommandInterpreter
                     return new ListRecipesCommand(recipeManager, commandArguments);
                 case "search":
                     return new SearchCommand(recipeManager, commandArguments);
+                case "change-language":
+                    return new ChangeLanguageCommand(recipeManager, commandArguments);
                 default:
-                    throw new CommandNotFoundException(commandName);
+                    throw new CommandNotFoundException(commandName, recipeManager.LocalisationService);
             }
         }
 }

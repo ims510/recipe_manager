@@ -15,7 +15,7 @@ public class ShowRecipeCommand : Command
     {
         if (!isValid)
         {
-            Console.WriteLine("Invalid command arguments");
+            recipeManager.LocalisationService.PrintMessage("invalid-command-arguments");
             return;
         }
         
@@ -27,7 +27,7 @@ public class ShowRecipeCommand : Command
         }
         else
         {
-            Console.WriteLine("Invalid recipe ID");
+            recipeManager.LocalisationService.PrintMessage("invalid-recipe-id");
         }
     }
 }

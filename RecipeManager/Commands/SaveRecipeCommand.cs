@@ -19,7 +19,7 @@ public class SaveRecipeCommand : Command
     {
         if (!isValid)
         {
-            Console.WriteLine("Invalid command arguments");
+            recipeManager.LocalisationService.PrintMessage("invalid-command-arguments");
             return;
         }
 
@@ -41,7 +41,7 @@ public class SaveRecipeCommand : Command
         }
         else
         {
-            Console.WriteLine("Invalid recipe ID");
+            recipeManager.LocalisationService.PrintMessage("invalid-recipe-id");
         }
       
     }

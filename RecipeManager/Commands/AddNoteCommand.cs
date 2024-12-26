@@ -15,7 +15,7 @@ public class AddNoteCommand : Command
     {
         if (!isValid)
         {
-            Console.WriteLine("Invalid command arguments");
+            recipeManager.LocalisationService.PrintMessage("invalid-command-arguments");
             return;
         }
 
@@ -29,7 +29,7 @@ public class AddNoteCommand : Command
         }
         else
         {
-            Console.WriteLine("Invalid recipe ID");
+            recipeManager.LocalisationService.PrintMessage("invalid-recipe-id");
         }
 
     }
