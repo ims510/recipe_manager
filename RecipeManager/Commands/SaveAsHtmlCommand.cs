@@ -29,6 +29,7 @@ public class SaveAsHtmlCommand : Command
             try
             {
                 File.WriteAllText(filepath, html);
+                recipeManager.LocalisationService.PrintMessage("recipe-saved-html", filepath);
             }
             catch (Exception e)
             {

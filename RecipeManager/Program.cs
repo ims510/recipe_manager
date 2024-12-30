@@ -12,6 +12,11 @@ public class Program
         {
             Console.Write("$ ");
             string? line = Console.ReadLine();
+            if (line is null)
+            {
+                continue;
+            }
+            
             string[] commandArgs = line.Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
             try

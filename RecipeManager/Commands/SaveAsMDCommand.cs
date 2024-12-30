@@ -28,6 +28,7 @@ public class SaveAsMDCommand : Command
             try
             {
                 File.WriteAllText(filepath, recipeMD);
+                recipeManager.LocalisationService.PrintMessage("recipe-saved-md", filepath);
             }
             catch (Exception e)
             {

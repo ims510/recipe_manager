@@ -3,11 +3,11 @@ namespace RecipeManager;
 
 public class LocalisationService
 {
-    Dictionary<string, Dictionary<string, string>> messages;
-    Dictionary<string, Dictionary<string, string>> commands;
-    Dictionary<string, Dictionary<string, string>> commandHelp;
-    Dictionary<string, string> languages;
-    string currentLanguage;
+    readonly Dictionary<string, Dictionary<string, string>> messages;
+    readonly Dictionary<string, Dictionary<string, string>> commands;
+    readonly Dictionary<string, Dictionary<string, string>> commandHelp;
+    readonly Dictionary<string, string> languages;
+    string currentLanguage = "en";
     public string CurrentLanguage
     {
         get { return currentLanguage; }
@@ -114,6 +114,10 @@ public class LocalisationService
                     {"enter-command", "Tapez une commande"},
                     {"language-changed", "Langue changée en {0}"},
                     {"available-commands", "Commandes disponibles:"},
+                    {"empty-file", "Fichier vide"},
+                    {"recipe-saved", "Recette sauvegardée: {0}"},
+                    {"recipe-saved-md", "Recette sauvegardée au format Markdown à ce chemin: {0}"},
+                    {"recipe-saved-html", "Recette sauvegardée au format HTML à ce chemin: {0}"},
                 }
             },
             {
@@ -135,6 +139,10 @@ public class LocalisationService
                     {"enter-command", "Enter a command"},
                     {"language-changed", "Language changed to {0}"},
                     {"available-commands", "Available commands:"},
+                    {"empty-file", "Empty file"},
+                    {"recipe-saved", "Recipe saved: {0}"},
+                    {"recipe-saved-md", "Recipe saved in Markdown format at this filepath: {0}"},
+                    {"recipe-saved-html", "Recipe saved in HTML format at this filepath: {0}"},
                 }
             }
         };

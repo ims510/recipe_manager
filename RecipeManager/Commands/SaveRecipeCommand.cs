@@ -37,7 +37,7 @@ public class SaveRecipeCommand : Command
 
         string json = JsonSerializer.Serialize(recipeDto, options); 
         File.WriteAllText(recipe.Filename, json);
-
+        recipeManager.LocalisationService.PrintMessage("recipe-saved", recipe.Title);
         }
         else
         {

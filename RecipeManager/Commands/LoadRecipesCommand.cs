@@ -68,7 +68,11 @@ public class LoadRecipesCommand : Command
         try
         {
             string json = File.ReadAllText(filename);
-            RecipeDto recipeDto = JsonSerializer.Deserialize<RecipeDto>(json, options);
+            RecipeDto? recipeDto = JsonSerializer.Deserialize<RecipeDto>(json, options);
+            if (recipeDto == null)
+            {
+                throw new Exception(recipeManager.LocalisationService.GetMessage("empty-file"));
+            }
             return new Recipe(recipeDto, filename, id);
         }
         catch (Exception e)

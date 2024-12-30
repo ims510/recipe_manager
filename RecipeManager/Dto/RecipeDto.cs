@@ -2,14 +2,14 @@ namespace RecipeManager;
 
 public class RecipeDto
 {
-    public string[] Directions { get; set; }
-    public string[] Ingredients { get; set; }
-    public string Language { get; set; }
-    public string Source { get; set; }
-    public string[] Tags { get; set; }
-    public string Title { get; set; }
-    public string Url { get; set; }
-    public string[] Notes { get; set; }
-    public string Categories { get; set; }
-    public string Allergens { get; set; }
+    public required string[] Directions { get; set; }
+    public required string[] Ingredients { get; set; }
+    public required string Language { get; set; }
+    public required string Source { get; set; }
+    public required string[] Tags { get; set; }
+    public required string Title { get; set; }
+    public required string Url { get; set; }
+    public string[]? Notes { get; set; }
+    public required string Categories { get; set; }
+    public required string Allergens { get; set; }
 }
