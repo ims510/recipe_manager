@@ -1,17 +1,22 @@
 # Recipe manager
-Ceci est un projet en C# qui utilise les notions apprises dans le cours de Programmation Orienté Objet dans le cadre du Master de Traitement Automatique de Langues. 
+Ceci est un projet en C# qui applique les notions apprises dans le cours de Programmation Orientée Objet dans le cadre du Master en Traitement Automatique des Langues. 
 
-Il s'agit d'une applicatione en ligne de commande qui permet de charger des recettes de cuisine en format json, chercher des recettes à partir des ingredients, cateogories ou allergenes, ajouter des notes (par exemple des modifications personnelles de la recette), effacer ces notes, et sauvegarder la recette en format Markdown, HTML ou simplement l'afficer dans le terminal.
+Il s'agit d'une application en ligne de commande permettant de :
+- Charger des recettes de cuisine au format JSON.
+- Rechercher des recettes à partir des ingrédients, catégories ou allergènes.
+- Ajouter des notes (par exemple, des modifications personnelles).
+- Supprimer ces notes.
+- Sauvegarder les recettes au format Markdown, HTML ou les afficher simplement dans le terminal.
 
-Les données proviennent de ce repository: https://github.com/dpapathanasiou/recipes?tab=readme-ov-file
+Les données proviennent de ce repository : [https://github.com/dpapathanasiou/recipes](https://github.com/dpapathanasiou/recipes?tab=readme-ov-file).
 
-Pour pouvoir bien charger le projet sur github, j'ai telechargé 10 recettes aleatoires que j'ai utilisé dans cette application et qui sont dans le dossier `recipes`. Elles ont été legerement modifiés pour separer les categories et les allergenes (pour la commande de recherche), car avant tout etait dans sous "tags". J'ai aussi crée un fichier text `recipes.txt` qui contient un index des recettes.
+Pour rendre le projet plus pratique, j'ai téléchargé 10 recettes aléatoires qui sont utilisées dans cette application et stockées dans le dossier `recipes`. Ces recettes ont été légèrement modifiées pour séparer les catégories et les allergènes (auparavant regroupés sous "tags"). Un fichier texte, `recipes.txt`, contient un index des recettes.
 
 # Comment utiliser l'application
 
 ## 1. Charger les données
 
-Après avoir lancé l'application avec `dotnet run` la premiere commande à lancer est `load-recipes` en donnant comme argument le dossier "recipes"
+Après avoir lancé l'application avec `dotnet run` la premiere commande à executer est `load-recipes` en donnant comme argument le dossier "recipes"
 ```
 load-recipes ../recipes
 ```
@@ -83,7 +88,7 @@ Si on veut sauvegarder la recette en format HTML, avant ou après avoir ajouté 
 
 Par exemple: `save-as-html 4 ../recipes/exemple.html`
 
-On trouvera donc à ce chemin le fichier `exemple.html` qui contiendra la recette, et les notes si on les a ajouté (pas besoin que les notes soient sauvegardé dans le fichier JSON pour qu'elles soient presentes dans le html).
+On trouvera donc à ce chemin le fichier `exemple.html` qui contiendra la recette, et les notes si on les a ajoutées (pas besoin que les notes soient sauvegardées dans le fichier JSON pour qu'elles soient presentes dans le html).
 
 ## 9. Chercher une recette
 
@@ -171,7 +176,7 @@ Par exemple: `change-language fr`
 
 Une fois que la langue a été changée on peut utiliser toutes les commandes en français. Pour voir une liste complete des commandes en francais, utilisez la commande `aide`.
 
-**Attention!** Bien que les commandes soient en français les mots clés qu'on peut utiliser ne peuvent etre qu'en anglais, car les recettes sont en anglais. 
+**Attention!** Bien que les commandes soient en français les mots clés qu'on peut utiliser lorsqu'on cherche une recette ne peuvent etre qu'en anglais, car les recettes sont en anglais. 
 
 ## 11. Aide
 
